@@ -3,10 +3,21 @@ set nocompatible
 " Показывать положение курсора всё время.
 set ruler
 
+" Показывать незавершённые команды в статусбаре
+set showcmd
+
+" Показывать незавершённые команды в статусбаре
+set showcmd 
+
+" Фолдинг по отсупам
+set foldmethod=indent
+
 " Включаем перенос строк (set nowrap отключает перенос строк)
 set wrap
+
 " Перенос строк по словам, а не по буквам
 set linebreak
+
 " Включаем подсветку синтаксиса
 syntax on
 " Показывать строку с позицией курсора
@@ -36,10 +47,29 @@ set undolevels=1000
 vmap <C-C> "+yi
 imap <C-V> <esc>"+gPi
 
+"foldmethod=syntax
+set foldmethod=marker
+set foldmarker={{{,}}}
+
 " F2 - быстрое сохранение
 nmap <F2> :w<cr>
 vmap <F2> <esc>:w<cr>i
 imap <F2> <esc>:w<cr>i
+
+" F3 - раскрыть/свернуть блок кода
+nmap <F3> za
+vmap <F3> zai
+imap <F3> zai
+
+
+" F11 - показать окно Taglist
+map <F11> :TlistToggle<cr>
+vmap <F11> <esc>:TlistToggle<cr>
+imap <F11> <esc>:TlistToggle<cr>
+
+" Выключаем ненавистный режим замены
+imap <Ins> <Esc>i
+
 
 " Меню выбора кодировки текста (koi8-r, cp1251, cp866, utf8)
 set wildmenu
@@ -60,3 +90,12 @@ let php_htmlInStrings=1
 let php_baselib = 1
 
 colorscheme desert
+
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * Tlist
+let g:Tlist_Use_Right_Window = 1
+let g:tagbar_iconchars = ['►', '▼']
+
+"--- --
+
