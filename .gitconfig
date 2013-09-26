@@ -1,0 +1,9 @@
+[user]
+	name = Nikolay Zhuravlev
+	email = Nikolay.A.Zhuravlev@gmail.com
+[alias]
+	ci = commit
+	st = status
+	glog = log --graph --color --all
+	co = checkout
+	addremove = add .

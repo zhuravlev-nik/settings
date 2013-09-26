@@ -1,0 +1,7 @@
+[ui]
+username = Nikolay Zhuravlev <Nikolay.A.Zhuravlev@gmail.com>
+
+[extensions]
+hgext.graphlog = 
+fetch =
+hgext.color =
